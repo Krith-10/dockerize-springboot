@@ -1,0 +1,36 @@
+spring:
+  http:
+    encoding:
+      enabled: true
+  main:
+    allow-bean-definition-overriding: 'true'
+  jpa:
+    hibernate:
+      show-sql: "false"
+      ddl-auto: none
+    properties:
+      javax:
+        persistence:
+          validation:
+            mode: none
+    show-sql: "false"
+  data:
+    jpa:
+      repositories:
+        enabled: "true"
+  application:
+    name: studentService
+  jackson:
+    date-format: "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
+  lifecycle:
+    timeout-per-shutdown-phase: 5m
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+# If connection to mysql database from docker container url to be updated as
+# url: 'jdbc:mysql://host.docker.internal:3306/practice'
+    url: 'jdbc:mysql://localhost:3306/practice'
+    username: 'root'
+    password: 'root'
+
+server:
+  port: 8080
